@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @EnableWebMvc
 @SpringBootApplication
-@MapperScan("net.lh.dome.**.mapper")
+@MapperScan("com.lh.dome.**.mapper")
 public class DomeApplication {
 
     public static void main(String[] args) {
