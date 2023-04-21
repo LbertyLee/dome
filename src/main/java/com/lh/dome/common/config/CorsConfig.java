@@ -1,4 +1,4 @@
-package com.lh.dome.framework.config;
+package com.lh.dome.common.config;
 
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
