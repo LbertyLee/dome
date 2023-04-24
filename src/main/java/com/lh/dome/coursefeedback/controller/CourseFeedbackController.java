@@ -36,8 +36,9 @@ public class CourseFeedbackController {
     }
 
     @GetMapping
-    public RespResult getCourseFeedbackList(CourseFeedback courseFeedback){
-       return RespResult.success(courseFeedbackService.getCourseFeedbackList(courseFeedback));
+    public RespResult getCourseFeedbackList(String name){
+        CourseFeedback courseFeedback = new CourseFeedback().setCourseName(name);
+        return RespResult.success(courseFeedbackService.getCourseFeedbackList(courseFeedback));
     }
 
 }

@@ -4,8 +4,10 @@ package com.lh.dome.common.exception;
 import com.lh.dome.common.constant.ErrorCodeConstants;
 
 /**
- * 业务异常
+ * 系统异常
  *
+ * @author lihong
+ * @date 2023/04/21
  */
 public final class SystemException extends RuntimeException
 {

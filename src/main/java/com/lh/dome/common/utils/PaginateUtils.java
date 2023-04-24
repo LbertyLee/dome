@@ -9,7 +9,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import java.util.List;
 
 /**
- * @Author Jianfreespace
+ * 分页工具
+ *
+ * @author lihong
  * @Date 2023/4/14
  */
 public class PaginateUtils {
@@ -17,7 +19,6 @@ public class PaginateUtils {
 
     /**
      * 默认分页
-     * @return
      */
     public static <T> Page<T> startPage() {
         // 获取上下文
@@ -37,6 +38,13 @@ public class PaginateUtils {
         return new Page<>(pageNum, pageSize);
     }
 
+    /**
+     * 构建分页数据
+     *
+     * @param page 页面
+     * @param data 数据
+     * @return {@link PaginateData}<{@link T}>
+     */
     public static <T, V> PaginateData<T> build(Page<V> page, List<T> data) {
         PaginateData<T> paginateData = new PaginateData<>();
         paginateData.setTotal((int) page.getTotal());

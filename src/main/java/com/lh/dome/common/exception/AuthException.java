@@ -4,8 +4,10 @@ package com.lh.dome.common.exception;
 import com.lh.dome.common.constant.ErrorCodeConstants;
 
 /**
- * 业务异常
+ * 身份验证异常
  *
+ * @author lihong
+ * @date 2023/04/21
  */
 public final class AuthException extends RuntimeException
 {
