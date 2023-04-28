@@ -39,7 +39,7 @@ public class CourseFeedbackController {
     }
 
 
-    @SaCheckRole("admin")
+//    @SaCheckRole("admin")
     @GetMapping
     public RespResult getCourseFeedbackList(String name){
         CourseFeedback courseFeedback = new CourseFeedback().setCourseName(name);

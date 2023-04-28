@@ -1,7 +1,6 @@
 package com.lh.dome.system.service.impl;
 
 import com.lh.dome.system.mapper.SysMenuMapper;
-import com.lh.dome.system.mapper.SysUserMapper;
 import com.lh.dome.system.service.SysMenuService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,6 @@ public class SysMenuServiceImpl implements SysMenuService {
 
     @Resource
     private SysMenuMapper sysMenuMapper;
-
 
 
     /**
