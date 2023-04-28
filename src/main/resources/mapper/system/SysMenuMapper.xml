@@ -5,7 +5,16 @@
 <mapper namespace="com.lh.dome.system.mapper.SysMenuMapper">
 
 
-    <select id="getPermissionList" resultType="java.lang.String">
-        SELECT m.perms   FROM sys_menu as m LEFT JOIN sys_role_menu as rm ON as.menu_id=m.menu_id
+
+
+    <select id="getPermissionList" resultType="java.lang.String" parameterType="Long">
+        SELECT DISTINCT
+            m.perms
+        FROM
+            sys_menu AS m
+                LEFT JOIN sys_role_menu AS rm ON rm.menu_id = m.menu_id
+                LEFT JOIN sys_user_role AS ur ON ur.role_id = rm.role_id
+        WHERE
+            ur.user_id = #{userId};
     </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.lh.dome.framework.wed.exception;
 
 
 import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.NotPermissionException;
 import cn.dev33.satoken.exception.NotRoleException;
 import com.lh.dome.common.constant.ErrorCodeConstants;
 import com.lh.dome.common.constant.HttpStatus;
@@ -87,11 +88,33 @@ public class GlobalExceptionHandler {
         log.error("请求地址'{}',发生认证异常.", requestURI, e);
         return RespResult.error("登录状态已过期，请重新登录", e.getErrorCode(), HttpStatus.UNAUTHORIZED);
     }
+
+    /**
+     * 没有角色权限
+     *
+     * @param e       e
+     * @param request 请求
+     * @return {@link RespResult}
+     */
     @ExceptionHandler(NotRoleException.class)
     public RespResult handleNotRoleException(NotRoleException e, HttpServletRequest request){
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生权限异常.", requestURI, e);
         return RespResult.error("没有操作权限", HttpStatus.UNAUTHORIZED);
+    }
+
+    /**
+     * 权限不足
+     *
+     * @param e       e
+     * @param request 请求
+     * @return {@link RespResult}
+     */
+    @ExceptionHandler(NotPermissionException.class)
+    public RespResult handleNotPermissionException(NotPermissionException e, HttpServletRequest request){
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发生权限异常.", requestURI, e);
+        return RespResult.error("权限不足", HttpStatus.UNAUTHORIZED);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.lh.dome.system.service.impl;
 
+import com.lh.dome.common.utils.SecurityUtils;
 import com.lh.dome.system.mapper.SysMenuMapper;
 import com.lh.dome.system.service.SysMenuService;
 import jakarta.annotation.Resource;
@@ -22,6 +23,6 @@ public class SysMenuServiceImpl implements SysMenuService {
      */
     @Override
     public List<String> getPermissionList(Object loginId) {
-        return sysMenuMapper.getPermissionList(loginId);
+        return sysMenuMapper.getPermissionList(SecurityUtils.getUserId());
     }
 }

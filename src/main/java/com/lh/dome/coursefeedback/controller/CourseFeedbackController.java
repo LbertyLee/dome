@@ -1,5 +1,6 @@
 package com.lh.dome.coursefeedback.controller;
 
+import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.dev33.satoken.annotation.SaIgnore;
 import com.lh.dome.common.domain.RespResult;
@@ -39,7 +40,8 @@ public class CourseFeedbackController {
     }
 
 
-//    @SaCheckRole("admin")
+    @SaCheckRole("admin")
+    @SaCheckPermission("system:test:lisst")
     @GetMapping
     public RespResult getCourseFeedbackList(String name){
         CourseFeedback courseFeedback = new CourseFeedback().setCourseName(name);
