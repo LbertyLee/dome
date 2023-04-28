@@ -1,6 +1,8 @@
 package com.lh.dome.framework.wed.exception;
 
 
+import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.exception.NotRoleException;
 import com.lh.dome.common.constant.ErrorCodeConstants;
 import com.lh.dome.common.constant.HttpStatus;
 import com.lh.dome.common.domain.RespResult;
@@ -85,6 +87,12 @@ public class GlobalExceptionHandler {
         log.error("请求地址'{}',发生认证异常.", requestURI, e);
         return RespResult.error("登录状态已过期，请重新登录", e.getErrorCode(), HttpStatus.UNAUTHORIZED);
     }
+    @ExceptionHandler(NotRoleException.class)
+    public RespResult handleNotRoleException(NotRoleException e, HttpServletRequest request){
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发生权限异常.", requestURI, e);
+        return RespResult.error("没有操作权限", HttpStatus.UNAUTHORIZED);
+    }
 
     /**
      * 处理未登录异常
@@ -93,13 +101,13 @@ public class GlobalExceptionHandler {
      * @param request 请求
      * @return {@link RespResult}
      */
-//    @ExceptionHandler(NotLoginException.class)
-//    public RespResult handleNotLoginException(NotLoginException e, HttpServletRequest request)
-//    {
-//        String requestURI = request.getRequestURI();
-//        log.error("请求地址'{}',发生认证异常.", requestURI, e);
-//        return RespResult.error("登录状态已过期，请重新登录", ErrorCodeConstants.AUTH_INVALID_TOKEN, HttpStatus.UNAUTHORIZED);
-//    }
+    @ExceptionHandler(NotLoginException.class)
+    public RespResult handleNotLoginException(NotLoginException e, HttpServletRequest request)
+    {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发生认证异常.", requestURI, e);
+        return RespResult.error("登录状态已过期，请重新登录", ErrorCodeConstants.AUTH_INVALID_TOKEN, HttpStatus.UNAUTHORIZED);
+    }
 
     /**
      * 拦截未知的运行时异常

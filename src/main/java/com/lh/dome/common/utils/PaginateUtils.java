@@ -2,6 +2,7 @@ package com.lh.dome.common.utils;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lh.dome.common.domain.PaginateData;
+import com.lh.dome.coursefeedback.domain.CourseFeedback;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -52,6 +53,16 @@ public class PaginateUtils {
         paginateData.setCurrentPage((int) page.getCurrent());
         paginateData.setPageSize((int) page.getSize());
         paginateData.setPageCount((int) page.getPages());
+        return paginateData;
+    }
+
+    public static <T> PaginateData<T> builds(Page<T> courseFeedbackPage) {
+        PaginateData<T> paginateData = new PaginateData<>();
+        paginateData.setTotal((int) courseFeedbackPage.getTotal());
+        paginateData.setRecords(courseFeedbackPage.getRecords());
+        paginateData.setCurrentPage((int) courseFeedbackPage.getCurrent());
+        paginateData.setPageSize((int) courseFeedbackPage.getSize());
+        paginateData.setPageCount((int) courseFeedbackPage.getPages());
         return paginateData;
     }
 }

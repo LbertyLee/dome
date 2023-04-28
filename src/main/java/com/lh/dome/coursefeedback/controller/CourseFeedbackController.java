@@ -1,5 +1,7 @@
 package com.lh.dome.coursefeedback.controller;
 
+import cn.dev33.satoken.annotation.SaCheckRole;
+import cn.dev33.satoken.annotation.SaIgnore;
 import com.lh.dome.common.domain.RespResult;
 import com.lh.dome.coursefeedback.domain.CourseFeedback;
 import com.lh.dome.coursefeedback.domain.dto.CourseFeedbackDTO;
@@ -29,12 +31,15 @@ public class CourseFeedbackController {
      * @param courseFeedbackDTO 课程反馈dto
      * @return {@link RespResult}
      */
+    @SaIgnore
     @PostMapping
     public RespResult addCourseFeedback(@RequestBody @Valid CourseFeedbackDTO courseFeedbackDTO){
         courseFeedbackService.addCourseFeedback(courseFeedbackDTO);
         return RespResult.success();
     }
 
+
+    @SaCheckRole("admin")
     @GetMapping
     public RespResult getCourseFeedbackList(String name){
         CourseFeedback courseFeedback = new CourseFeedback().setCourseName(name);

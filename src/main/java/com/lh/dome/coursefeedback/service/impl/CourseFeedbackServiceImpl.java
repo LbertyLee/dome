@@ -1,5 +1,6 @@
 package com.lh.dome.coursefeedback.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lh.dome.common.domain.PaginateData;
@@ -48,11 +49,16 @@ public class CourseFeedbackServiceImpl implements CourseFeedbackService {
      * @return {@link List}<{@link CourseFeedback}>
      */
     @Override
-    public PaginateData<CourseFeedback> getCourseFeedbackList(CourseFeedback courseFeedback) {
+    public PaginateData<CourseFeedbackVO> getCourseFeedbackList(CourseFeedback courseFeedback) {
         Page<CourseFeedback> page = PaginateUtils.startPage();
-        QueryWrapper<CourseFeedback> courseFeedbackQueryWrapper = new QueryWrapper<>();
-        courseFeedbackQueryWrapper.like("course_name",courseFeedback.getCourseName());
+        LambdaQueryWrapper<CourseFeedback> courseFeedbackQueryWrapper = new LambdaQueryWrapper<>();
+        courseFeedbackQueryWrapper.like(CourseFeedback::getCourseName,courseFeedback.getCourseName());
         Page<CourseFeedback> courseFeedbackPage = courseFeedbackMapper.selectPage(page, courseFeedbackQueryWrapper);
-        return PaginateUtils.build(page,courseFeedbackPage.getRecords());
+        List<CourseFeedbackVO> courseFeedbackVOS = courseFeedbackPage.getRecords().stream().map(a -> {
+            CourseFeedbackVO courseFeedbackVO = new CourseFeedbackVO();
+            BeanUtils.copyProperties(a, courseFeedbackVO);
+            return courseFeedbackVO;
+        }).toList();
+        return PaginateUtils.build(page,courseFeedbackVOS);
     }
 }

@@ -1,5 +1,6 @@
 package com.lh.dome.coursefeedback.controller;
 
+import cn.dev33.satoken.annotation.SaIgnore;
 import com.lh.dome.common.domain.RespResult;
 import com.lh.dome.coursefeedback.domain.CourseInfo;
 import com.lh.dome.coursefeedback.service.CourseInfoService;
@@ -24,6 +25,7 @@ public class CourseInfoController {
     @Resource
     private CourseInfoService courseInfoService;
 
+    @SaIgnore
     @GetMapping
     public RespResult getCourseInfoList(String name){
         CourseInfo courseInfo = new CourseInfo().setName(name);

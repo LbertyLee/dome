@@ -3,6 +3,7 @@ package com.lh.dome.coursefeedback.service;
 import com.lh.dome.common.domain.PaginateData;
 import com.lh.dome.coursefeedback.domain.CourseFeedback;
 import com.lh.dome.coursefeedback.domain.dto.CourseFeedbackDTO;
+import com.lh.dome.coursefeedback.domain.vo.CourseFeedbackVO;
 
 import java.util.List;
 
@@ -28,5 +29,5 @@ public interface CourseFeedbackService {
      * @param courseFeedback 课程反馈
      * @return {@link List}<{@link CourseFeedback}>
      */
-    PaginateData<CourseFeedback> getCourseFeedbackList(CourseFeedback courseFeedback);
+    PaginateData<CourseFeedbackVO> getCourseFeedbackList(CourseFeedback courseFeedback);
 }
