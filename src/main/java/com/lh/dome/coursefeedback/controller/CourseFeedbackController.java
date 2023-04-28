@@ -41,7 +41,7 @@ public class CourseFeedbackController {
 
 
     @SaCheckRole("admin")
-    @SaCheckPermission("system:test:lisst")
+    @SaCheckPermission("system:test:list")
     @GetMapping
     public RespResult getCourseFeedbackList(String name){
         CourseFeedback courseFeedback = new CourseFeedback().setCourseName(name);
