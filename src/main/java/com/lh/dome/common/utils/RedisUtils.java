@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
  * @date 2023/04/29
  */
 @Component
-public class RedisCache
+public class RedisUtils
 {
     @Resource
     public RedisTemplate redisTemplate;
