@@ -14,9 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class test {
 
 
+    /**
+     * 测试接口幂等功能
+     *
+     * @return {@link RespResult}
+     */
     @SaIgnore
     @GetMapping
-    @Idempotent(value = "demo",expireSeconds = 5)
+    @Idempotent(key = "demo",expireSeconds = 5)
     public RespResult tests(){
         return RespResult.success("测试通过");
     }

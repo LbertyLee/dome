@@ -29,7 +29,7 @@ public class IdempotentInterceptor {
     @Around("@annotation(idempotent)")
     public Object around(ProceedingJoinPoint joinPoint, Idempotent idempotent) throws Throwable {
         // 构造幂等Key
-        String idempotentKey = IDEMPOTENT_PREFIX + idempotent.value() + ":" + getMethodParams(joinPoint);
+        String idempotentKey = IDEMPOTENT_PREFIX + idempotent.key() + ":" + getMethodParams(joinPoint);
         // 判断幂等Key是否存在，如果存在，则说明已经处理过，直接返回
         if (Boolean.TRUE.equals(redisCache.hasKey(idempotentKey))) {
             throw new IdempotentException("请勿重复操作");

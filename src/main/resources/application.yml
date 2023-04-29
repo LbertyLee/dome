@@ -76,13 +76,13 @@ spring:
 #      - platform: tencent-cos-1
 #        # 启用存储
 #        enable-storage: true
-#        secret-id: AKIDs2BB1cx85pNtKZjsrpeNUn9OflngPwPi
-#        secret-key: CID5lFZrxsgP1X1Red2JNG9oFTVYSAgz
+#        secret-id: *****
+#        secret-key: *****
 #        #存仓库所在地域
-#        region: ap-chengdu
-#        bucket-name: lh-dome-1310216282
+#        region: *****
+#        bucket-name: *****
 #        # 访问域名，注意“/”结尾，例如：https://abc.cos.ap-nanjing.myqcloud.com/
-#        domain: https://lh-dome-1310216282.cos.ap-chengdu.myqcloud.com
+#        domain: *****
 #        base-path: hy/ # 基础路径
   #文件上传大小
   servlet:

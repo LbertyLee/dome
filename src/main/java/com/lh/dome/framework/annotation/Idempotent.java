@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Idempotent {
     // 幂等Key的前缀，默认为空串
-    String value() default "";
+    String key() default "";
     // 幂等Key的过期时间，默认为5分钟，单位为秒
     long expireSeconds() default 10;
 }
