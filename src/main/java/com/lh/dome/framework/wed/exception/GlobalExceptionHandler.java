@@ -8,6 +8,7 @@ import com.lh.dome.common.constant.ErrorCodeConstants;
 import com.lh.dome.common.constant.HttpStatus;
 import com.lh.dome.common.domain.RespResult;
 import com.lh.dome.common.exception.AuthException;
+import com.lh.dome.common.exception.IdempotentException;
 import com.lh.dome.common.exception.ServiceException;
 import com.lh.dome.common.exception.SystemException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,7 +28,7 @@ import java.nio.file.AccessDeniedException;
 /**
  * 全局异常处理器
  *
- * @author ruoyi
+ * @author lihong
  */
 @RestControllerAdvice
 @Slf4j
@@ -153,14 +154,14 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 自定义验证异常
+     * 幂等异常
      */
-//    @ExceptionHandler(BindException.class)
-//    public RespResult handleBindException(BindException e) {
-//        log.error(e.getMessage(), e);
-//        String message = e.getAllErrors().get(0).getDefaultMessage();
-//        return RespResult.error(message);
-//    }
+    @ExceptionHandler(IdempotentException.class)
+    public RespResult idempotentException(IdempotentException e,HttpServletRequest request) {
+        String requestURI = request.getRequestURI();
+        log.error("请求地址'{}',发生系统异常.", requestURI, e);
+        return RespResult.error("不要重复提交请求");
+    }
 
     /**
      * 自定义验证异常

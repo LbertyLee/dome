@@ -1,6 +1,7 @@
-package com.lh.dome.file.domain.vo;
+package com.lh.dome.filestorage.domain.vo;
 
 import cn.hutool.core.lang.Dict;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -60,6 +61,7 @@ public class FileInfoVO {
     private Dict attr;
 
     /*** 创建时间*/
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
 }

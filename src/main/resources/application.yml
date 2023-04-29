@@ -1,7 +1,8 @@
 server:
-  port: 23427
+  port: 8080
   servlet:
     context-path: /
+
 spring:
   datasource:
 #    url: jdbc:mysql://118.31.4.196:3306/shukeapp?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
@@ -32,7 +33,7 @@ spring:
     banner-mode: console
   data:
     redis:
-      database: 1
+      database: 10
       host: 124.223.15.205
       port: 36379
       password: rzDX32tGoA3Z1go7
@@ -52,10 +53,10 @@ spring:
     #默认使用的存储平台
     default-platform: local-1
     #缩略图后缀，例如【.min.jpg】【.png】
-    thumbnail-suffix: ".min.jpg"
+    thumbnail-suffix: ".jpg"
     # 本地存储
     local-plus:
-      - # 存储平台标识
+       # 存储平台标识
       - platform: local-1
         #启用存储
         enable-storage: true
@@ -69,6 +70,25 @@ spring:
         path-patterns: /**
        # 存储路径
         storage-path: D:/Temp/
+    # 腾讯云 COS
+#    tencent-cos:
+#      # 存储平台标识
+#      - platform: tencent-cos-1
+#        # 启用存储
+#        enable-storage: true
+#        secret-id: AKIDs2BB1cx85pNtKZjsrpeNUn9OflngPwPi
+#        secret-key: CID5lFZrxsgP1X1Red2JNG9oFTVYSAgz
+#        #存仓库所在地域
+#        region: ap-chengdu
+#        bucket-name: lh-dome-1310216282
+#        # 访问域名，注意“/”结尾，例如：https://abc.cos.ap-nanjing.myqcloud.com/
+#        domain: https://lh-dome-1310216282.cos.ap-chengdu.myqcloud.com
+#        base-path: hy/ # 基础路径
+  #文件上传大小
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
 
 
 mybatis-plus:

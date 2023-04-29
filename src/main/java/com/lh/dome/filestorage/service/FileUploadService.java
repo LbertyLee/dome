@@ -1,6 +1,6 @@
-package com.lh.dome.file.service;
+package com.lh.dome.filestorage.service;
 
-import com.lh.dome.file.domain.vo.FileInfoVO;
+import com.lh.dome.filestorage.domain.vo.FileInfoVO;
 import org.springframework.web.multipart.MultipartFile;
 
 /**

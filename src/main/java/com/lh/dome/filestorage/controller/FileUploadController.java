@@ -1,11 +1,10 @@
-package com.lh.dome.file.controller;
+package com.lh.dome.filestorage.controller;
 
 
 import com.lh.dome.common.domain.RespResult;
-import com.lh.dome.file.service.FileUploadService;
+import com.lh.dome.filestorage.service.FileUploadService;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
