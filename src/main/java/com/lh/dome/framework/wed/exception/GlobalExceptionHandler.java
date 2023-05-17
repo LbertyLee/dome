@@ -7,10 +7,7 @@ import cn.dev33.satoken.exception.NotRoleException;
 import com.lh.dome.common.constant.ErrorCodeConstants;
 import com.lh.dome.common.constant.HttpStatus;
 import com.lh.dome.common.domain.RespResult;
-import com.lh.dome.common.exception.AuthException;
-import com.lh.dome.common.exception.IdempotentException;
-import com.lh.dome.common.exception.ServiceException;
-import com.lh.dome.common.exception.SystemException;
+import com.lh.dome.common.exception.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -53,6 +50,23 @@ public class GlobalExceptionHandler {
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',不支持'{}'请求", requestURI, e.getMethod());
         return RespResult.error("不支持该类型的请求", HttpStatus.BAD_METHOD);
+    }
+
+    /**
+     * 文件存储异常
+     *
+     * @param e       e
+     * @param request 请求
+     * @return {@code RespResult}
+     */
+    @ExceptionHandler(FileStorageException.class)
+    public RespResult FileStorageException(ServiceException e, HttpServletRequest request){
+        log.error(e.getMessage(), e);
+        String message = e.getMessage();
+        if (StringUtils.isBlank(message)) {
+            message = "文件存储异常";
+        }
+        return RespResult.error(message, e.getErrorCode(), HttpStatus.BAD_REQUEST);
     }
 
     /**

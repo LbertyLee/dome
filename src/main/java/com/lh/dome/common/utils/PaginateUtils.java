@@ -2,7 +2,6 @@ package com.lh.dome.common.utils;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lh.dome.common.domain.PaginateData;
-import com.lh.dome.coursefeedback.domain.CourseFeedback;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

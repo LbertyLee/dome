@@ -30,12 +30,6 @@ public class FileInfoVO {
     /*** 文件名称*/
     private String filename;
 
-    /*** 基础存储路径*/
-    private String basePath;
-
-    /*** 存储路径*/
-    private String path;
-
     /*** 文件扩展名*/
     private String ext;
 
@@ -50,9 +44,6 @@ public class FileInfoVO {
 
     /*** 缩略图 MIME 类型*/
     private String thContentType;
-
-    /*** 文件所属对象id*/
-    private String objectId;
 
     /*** 文件所属对象类型，例如用户头像，评价图片*/
     private String objectType;

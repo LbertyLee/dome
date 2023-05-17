@@ -17,6 +17,10 @@ public class ErrorCodeConstants {
     public static final String PARAMETER_VALIDATION_ERROR = "PARAMETER_VALIDATION_ERROR";
     // 超过上传文件上限异常
     public static final String MAX_UPLOAD_FILE_ERROR = "MAX_UPLOAD_FILE_ERROR";
+
+    // 超过上传文件上限异常
+    public static final String UPLOAD_FILE_ERROR = "UPLOAD_FILE_ERROR";
+
     // 请求格式错误异常
     public static final String CONTENT_TYPE_ERROR = "CONTENT_TYPE_ERROR";
 
