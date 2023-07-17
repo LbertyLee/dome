@@ -50,7 +50,7 @@ public class HttpStatusConstants
     /**
      * 未授权
      */
-    public static final int UN IZED = 401;
+    public static final int UN_IZED = 401;
 
     /**
      * 访问受限，授权过期

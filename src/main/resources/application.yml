@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /
 
@@ -77,6 +77,21 @@ spring:
       max-file-size: 10MB
       max-request-size: 200MB
 
+minio:
+  #minio部署的机器ip地址
+  endpoint: 124.223.15.205
+  #minio使用的端口
+  port: 9001
+  #唯一标识的账户
+  accessKey: minioadmin
+  #账户的密码
+  secretKey: minioadmin
+  #是否使用https
+  secure: false
+  #测试使用的桶名称
+  defaultBucketName: dome
+  #捅名称
+  bucketName: dome
 
 mybatis-plus:
   # 对应的 XML 文件位置
