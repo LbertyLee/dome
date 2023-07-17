@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * 登录控制器
- *
- * @author lh
- * @date 2023/04/27
- */
+
 @RestController
 @RequestMapping("/login")
 public class LoginController {

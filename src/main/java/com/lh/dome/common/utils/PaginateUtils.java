@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 分页工具
  *
- * @author lihong
+ * @  lihong
  * @Date 2023/4/14
  */
 public class PaginateUtils {

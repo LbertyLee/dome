@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * SaToken配置
  *
- * @author lh
+ * @  lh
  *
  *
  * @date 2023/04/27

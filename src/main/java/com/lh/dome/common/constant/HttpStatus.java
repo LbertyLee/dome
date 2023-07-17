@@ -3,7 +3,7 @@ package com.lh.dome.common.constant;
 /**
  * 返回状态码
  * 
- * @author underdog
+ * @  underdog
  */
 public class HttpStatus
 {
@@ -50,7 +50,7 @@ public class HttpStatus
     /**
      * 未授权
      */
-    public static final int UNAUTHORIZED = 401;
+    public static final int UN IZED = 401;
 
     /**
      * 访问受限，授权过期

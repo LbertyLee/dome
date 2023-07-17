@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 空列表
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/19
  */
 @Target({ElementType.FIELD})
@@ -33,7 +33,7 @@ public @interface EmptyList {
 /**
  * 非空数组验证器
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/19
  */
 class EmptyListValidator implements ConstraintValidator<EmptyList, List<?>> {

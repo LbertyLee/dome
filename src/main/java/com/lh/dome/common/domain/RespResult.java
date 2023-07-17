@@ -12,7 +12,7 @@ import java.util.HashMap;
 /**
  * 操作消息提醒
  * 
- * @author underdog
+ * @  underdog
  */
 public class RespResult extends HashMap<String, Object>
 {

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 检查接口幂等注解
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/29
  */
 @Target(ElementType.METHOD)

@@ -8,7 +8,7 @@ import com.lh.dome.system.domain.dto.SysUserDTO;
 /**
  * 系统用户服务
  *
- * @author lh
+ * @  lh
  * @date 2023/04/27
  */
 public interface SysUserService   {

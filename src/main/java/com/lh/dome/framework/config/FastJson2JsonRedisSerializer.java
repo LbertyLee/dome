@@ -10,7 +10,7 @@ import org.springframework.data.redis.serializer.SerializationException;
 /**
  * Redis使用FastJson序列化
  *
- * @author lihong
+ * @  lihong
  */
 public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T>
 {

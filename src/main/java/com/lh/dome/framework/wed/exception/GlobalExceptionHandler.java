@@ -25,7 +25,7 @@ import java.nio.file.AccessDeniedException;
 /**
  * 全局异常处理器
  *
- * @author lihong
+ * @  lihong
  */
 @RestControllerAdvice
 @Slf4j
@@ -101,7 +101,7 @@ public class GlobalExceptionHandler {
     {
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生认证异常.", requestURI, e);
-        return RespResult.error("登录状态已过期，请重新登录", e.getErrorCode(), HttpStatus.UNAUTHORIZED);
+        return RespResult.error("登录状态已过期，请重新登录", e.getErrorCode(), HttpStatus.NOT_FOUND);
     }
 
     /**
@@ -115,7 +115,7 @@ public class GlobalExceptionHandler {
     public RespResult handleNotRoleException(NotRoleException e, HttpServletRequest request){
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生权限异常.", requestURI, e);
-        return RespResult.error("没有操作权限", HttpStatus.UNAUTHORIZED);
+        return RespResult.error("没有操作权限", HttpStatus.NOT_FOUND);
     }
 
     /**
@@ -129,7 +129,7 @@ public class GlobalExceptionHandler {
     public RespResult handleNotPermissionException(NotPermissionException e, HttpServletRequest request){
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生权限异常.", requestURI, e);
-        return RespResult.error("权限不足", HttpStatus.UNAUTHORIZED);
+        return RespResult.error("权限不足", HttpStatus.NOT_FOUND);
     }
 
     /**
@@ -144,7 +144,7 @@ public class GlobalExceptionHandler {
     {
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生认证异常.", requestURI, e);
-        return RespResult.error("登录状态已过期，请重新登录", ErrorCodeConstants.AUTH_INVALID_TOKEN, HttpStatus.UNAUTHORIZED);
+        return RespResult.error("登录状态已过期，请重新登录", ErrorCodeConstants.AUTH_INVALID_TOKEN, HttpStatus.NOT_FOUND);
     }
 
     /**

@@ -6,7 +6,7 @@ import com.lh.dome.common.constant.ErrorCodeConstants;
 /**
  * 身份验证异常
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/21
  */
 public final class AuthException extends RuntimeException

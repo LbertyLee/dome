@@ -5,12 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * 密码注册dto
- *
- * @author lh
- * @date 2023/04/27
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

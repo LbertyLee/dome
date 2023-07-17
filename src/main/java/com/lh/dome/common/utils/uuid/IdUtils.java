@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * ID生成器工具类
  * 
- * @author lihong
+ * @  lihong
  */
 public class IdUtils
 {

@@ -6,7 +6,7 @@ import com.lh.dome.common.constant.ErrorCodeConstants;
 /**
  * 服务异常
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/21
  */
 public final class ServiceException extends RuntimeException

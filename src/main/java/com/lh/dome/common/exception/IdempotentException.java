@@ -6,7 +6,7 @@ import com.lh.dome.common.constant.ErrorCodeConstants;
 /**
  * 幂等异常
  *
- * @author lihong
+ * @  lihong
  * @date 2023/04/29
  */
 public class IdempotentException extends RuntimeException{

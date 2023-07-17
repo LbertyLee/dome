@@ -6,7 +6,7 @@ import com.lh.dome.auth.domian.vo.LoginDataVO;
 /**
  * 登录服务
  *
- * @author lh
+ * @  lh
  * @date 2023/04/27
  */
 public interface LoginService {

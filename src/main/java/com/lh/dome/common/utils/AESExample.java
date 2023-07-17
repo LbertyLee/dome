@@ -10,7 +10,7 @@ import java.util.Base64;
 /**
  *
  *  AESE加密
- * @author lihong
+ * @  lihong
  * @date 2023/05/17
  */
 public class AESExample {
