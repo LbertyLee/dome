@@ -19,4 +19,12 @@ public interface SysRoleService {
      * @return {@link List}<{@link SysRole}>
      */
     List<SysRole> getRoleList();
+
+    /**
+     * 得到用户角色
+     *
+     * @param userName 用户名
+     * @return {@link List}<{@link SysRole}>
+     */
+    String getUserRole(String userName);
 }

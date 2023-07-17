@@ -28,4 +28,6 @@ public interface SysUserService   {
      * @return {@link SysUser}
      */
     SysUser selectSystemUser(PasswordLoginDTO passwordLoginDTO);
+
+    SysUser selectSysUserByUserName(String username);
 }

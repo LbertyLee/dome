@@ -66,4 +66,9 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserMapper.selectOne(
                 new LambdaQueryWrapper<SysUser>().eq(SysUser::getUserName, passwordLoginDTO.getUsername()));
     }
+
+    @Override
+    public SysUser selectSysUserByUserName(String username) {
+        return  sysUserMapper.selectOne(new LambdaQueryWrapper<SysUser>().eq(SysUser::getUserName,username));
+    }
 }

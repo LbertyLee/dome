@@ -1,7 +1,7 @@
 package com.lh.dome.framework.annotation;
 
 import com.lh.dome.common.exception.IdempotentException;
-import com.lh.dome.common.utils.RedisUtils;
+import com.lh.dome.common.redis.util.RedisUtils;
 import jakarta.annotation.Resource;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

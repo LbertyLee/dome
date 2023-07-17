@@ -1,4 +1,4 @@
-package com.lh.dome.common.utils;
+package com.lh.dome.common.redis.util;
 
 import java.util.Collection;
 import java.util.Iterator;

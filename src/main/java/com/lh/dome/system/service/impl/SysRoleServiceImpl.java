@@ -26,4 +26,9 @@ public class SysRoleServiceImpl implements SysRoleService {
     public List<SysRole> getRoleList() {
         return null;
     }
+
+    @Override
+    public String getUserRole(String userName) {
+        return sysRoleMapper.selectUserRoleByUserName(userName);
+    }
 }
