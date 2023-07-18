@@ -1,17 +1,12 @@
 package com.lh.dome.common.minio.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import io.minio.MinioClient;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Configuration
 @ConfigurationProperties(prefix = "minio")
 public class MinIoConfig {
@@ -50,11 +45,10 @@ public class MinIoConfig {
      */
     @Bean
     public MinioClient getMinioClient() {
-        MinioClient minioClient = MinioClient.builder()
+        return MinioClient.builder()
                 .endpoint(endpoint , port , secure)
                 .credentials(accessKey, secretKey)
                 .build();
-        return minioClient;
     }
 
 

@@ -26,6 +26,7 @@ public class SaTokenConfigure implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 //登录和注册接口不用携带Token
                 .excludePathPatterns("/login/**")
+                .excludePathPatterns("/test/**")
                 .excludePathPatterns("/register/**");
     }
 

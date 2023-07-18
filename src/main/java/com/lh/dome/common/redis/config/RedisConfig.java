@@ -1,5 +1,6 @@
-package com.lh.dome.framework.config;
+package com.lh.dome.common.redis.config;
 
+import com.lh.dome.framework.config.FastJson2JsonRedisSerializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

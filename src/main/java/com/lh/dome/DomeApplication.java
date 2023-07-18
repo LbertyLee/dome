@@ -2,8 +2,12 @@ package com.lh.dome;
 
 import cn.xuyanwu.spring.file.storage.EnableFileStorage;
 import org.mybatis.spring.annotation.MapperScan;
+import org.redisson.Redisson;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 
@@ -15,6 +19,7 @@ public class DomeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DomeApplication.class, args);
+
         System.out.println("""
 
                                                                                  \s
@@ -33,6 +38,8 @@ public class DomeApplication {
                                       `----'                             `----'  \s
                                                                                  \s""");
     }
+
+
 
 
 }

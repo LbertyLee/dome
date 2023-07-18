@@ -15,6 +15,12 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
+/**
+ * Redis工具
+ *
+ * @author lihong
+ * @date 2023/07/18
+ */
 @Component
 public class RedisUtils
 {
