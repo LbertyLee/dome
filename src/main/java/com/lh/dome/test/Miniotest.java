@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 @RestController
-@RequestMapping("/test")
-public class test {
+@RequestMapping("/test/minio")
+public class Miniotest {
 
     @Resource
     private MinioUtil minioUtil;
@@ -32,7 +32,7 @@ public class test {
      *
      * @return {@link RespResult}
      */
-    @SaIgnore
+
     @GetMapping
     @Idempotent(key = "demo",expireSeconds = 5)
     public RespResult tests(){
@@ -45,8 +45,8 @@ public class test {
      * @param file 文件
      * @return {@link RespResult}
      */
-    @SaIgnore
-    @PostMapping("/minio/upload")
+
+    @PostMapping("/upload")
     public RespResult minioUpload(MultipartFile file, @RequestParam(required = false) String bucketName){
         bucketName = StringUtils.hasLength(bucketName) ? bucketName : minioConfig.getDefaultBucketName();
         String objectName = minioUtil.getDatePath() + file.getOriginalFilename();
@@ -68,13 +68,13 @@ public class test {
      * @param objectName 对象名称
      * @param response  相应结果
      */
-    @GetMapping("/minio/download")
+    @GetMapping("/download")
     public void downLoad(@RequestParam(required = false) String bucketName, String objectName, HttpServletResponse response) {
         // 获取文件
         minioUtil.downResponse(bucketName,objectName,response);
     }
 
-    @DeleteMapping(value = "/minio/delete")
+    @DeleteMapping(value = "/delete")
     public RespResult deleteByPath(@RequestParam(required = false) String bucketName, String objectName) {
         bucketName = StringUtils.hasLength(bucketName) ? bucketName : minioConfig.getDefaultBucketName();
         minioUtil.delete(bucketName, objectName);

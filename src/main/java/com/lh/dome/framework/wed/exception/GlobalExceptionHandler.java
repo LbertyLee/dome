@@ -52,6 +52,16 @@ public class GlobalExceptionHandler {
         return RespResult.error("不支持该类型的请求", HttpStatus.BAD_METHOD);
     }
 
+    @ExceptionHandler(RateLimitException.class)
+    public RespResult RateLimitException(ServiceException e, HttpServletRequest request){
+        log.error(e.getMessage(), e);
+        String message = e.getMessage();
+        if (StringUtils.isBlank(message)) {
+            message = "超过了请求限制。请稍后再试";
+        }
+        return RespResult.error(message, e.getErrorCode(), HttpStatus.BAD_REQUEST);
+    }
+
     /**
      * 文件存储异常
      *
