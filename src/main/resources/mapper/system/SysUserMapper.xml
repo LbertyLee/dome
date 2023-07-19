@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lh.dome.system.mapper.SysUserMapper">
-    <resultMap id="SysUserResult" type="com.lh.dome.system.domain.SysUser">
+<mapper namespace="com.lh.demo.system.mapper.SysUserMapper">
+    <resultMap id="SysUserResult" type="com.lh.demo.system.domain.SysUser">
         <result property="id" column="id"/>
         <result property="userName" column="user_name"/>
         <result property="nickname" column="nickname"/>
@@ -15,7 +15,7 @@
     </resultMap>
 
 
-    <select id="checkSystemUserExist" resultType="java.lang.Boolean" parameterType="com.lh.dome.system.domain.dto.SysUserDTO">
+    <select id="checkSystemUserExist" resultType="java.lang.Boolean" parameterType="com.lh.demo.system.domain.dto.SysUserDTO">
         select count(id)>0 from  sys_user
         <where >
             <if test="userName != null  and userName != ''"> and user_name = #{userName}</if>

@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lh.dome.filestorage.mapper.FileDetailMapper">
+<mapper namespace="com.lh.demo.filestorage.mapper.FileDetailMapper">
 
 
-    <resultMap id="SysRoleResult" type="com.lh.dome.filestorage.domain.FileDetail">
+    <resultMap id="SysRoleResult" type="com.lh.demo.filestorage.domain.FileDetail">
         <id property="id" column="id"/>
         <result property="url" column="url"/>
         <result property="filename" column="filename"/>
