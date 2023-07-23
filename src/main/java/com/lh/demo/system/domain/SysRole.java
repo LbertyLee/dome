@@ -1,10 +1,14 @@
 package com.lh.demo.system.domain;
 
 import cn.hutool.core.date.DateTime;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+
+import java.util.Date;
 
 /**
  * 系统角色
@@ -37,16 +41,22 @@ public class SysRole {
 
     /**
      * 删除标志（0：代表存在 1：代表删除）*/
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private  Boolean delFlag;
-
-    /*** 创建时间*/
-    private DateTime createTime;
-
-    /*** 更新时间*/
-    private DateTime updateTime;
 
     /*** 备注*/
     private String remark;
+
+    /*** 创建时间*/
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+
+    /*** 更新时间*/
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date updateTime;
+
+
 
 
 }

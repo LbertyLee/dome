@@ -15,9 +15,25 @@ public class SysRoleController {
     @Resource
     private SysRoleService sysRoleService;
 
+    /**
+     * 获取用户角色信息
+     *
+     * @return {@link RespResult}
+     */
     @SaCheckRole("admin")
-    @GetMapping
+    @GetMapping()
+    public RespResult getSysRole(){
+        return RespResult.success(sysRoleService.getRoleListByUserId());
+    }
+
+    /**
+     * 获取系统角色列表
+     *
+     * @return {@link RespResult}
+     */
+    @GetMapping("/list")
     public RespResult getSysRoleList(){
-        return RespResult.success(sysRoleService.getRoleListByUserId(SecurityUtils.getUserId()));
+        return RespResult.success(sysRoleService.getRoleList());
+
     }
 }

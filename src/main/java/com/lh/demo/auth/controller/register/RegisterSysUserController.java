@@ -20,7 +20,7 @@ public class RegisterSysUserController {
 
     @PostMapping("/password")
     public RespResult registerSysUser(@RequestBody @Valid PasswordRegisterDTO passwordRegisterDTO){
-        sysUserService.addSystemUser(passwordRegisterDTO);
+        sysUserService.registerSystemUser(passwordRegisterDTO);
         return RespResult.success();
     }
 }

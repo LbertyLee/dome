@@ -2,6 +2,8 @@ package com.lh.demo.system.service;
 
 import com.lh.demo.auth.domian.dto.PasswordLoginDTO;
 import com.lh.demo.auth.domian.dto.PasswordRegisterDTO;
+import com.lh.demo.common.domain.PaginateData;
+import com.lh.demo.common.domain.RespResult;
 import com.lh.demo.system.domain.SysUser;
 import com.lh.demo.system.domain.dto.SysUserDTO;
 
@@ -19,7 +21,7 @@ public interface SysUserService   {
      * @return int
      */
     void addSystemUser(SysUserDTO sysUserDTO);
-    void addSystemUser(PasswordRegisterDTO passwordRegisterDTO);
+    void registerSystemUser(PasswordRegisterDTO passwordRegisterDTO);
 
     /**
      * 选择一个
@@ -30,4 +32,14 @@ public interface SysUserService   {
     SysUser selectSystemUser(PasswordLoginDTO passwordLoginDTO);
 
     SysUser selectSysUserByUserName(String username);
+
+    /**
+     * 查询系统用户列表
+     *
+     * @param sysUserDTO 系统用户dto
+     * @return {@link RespResult}
+     */
+    PaginateData<SysUser> getSystemUserList(SysUserDTO sysUserDTO);
+
+    SysUser selectSysUserInfo(Long userId);
 }
