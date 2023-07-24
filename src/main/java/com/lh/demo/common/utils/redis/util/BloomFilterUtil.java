@@ -1,4 +1,4 @@
-package com.lh.demo.common.redis.util;
+package com.lh.demo.common.utils.redis.util;
 
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RedissonClient;

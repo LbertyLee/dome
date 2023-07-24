@@ -15,4 +15,12 @@ public interface SysMenuMapper extends BaseMapper<SysMenu> {
      * @return {@link List}<{@link String}>
      */
     List<String> getPermissionList(Object loginId);
+
+    /**
+     * 通过用户id查询系统菜单
+     *
+     * @param userId 用户id
+     * @return {@link List}<{@link SysMenu}>
+     */
+    List<SysMenu> QuerySysMenuByUserid(Long userId);
 }

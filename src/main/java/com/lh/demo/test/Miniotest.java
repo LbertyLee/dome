@@ -2,8 +2,8 @@ package com.lh.demo.test;
 
 import com.lh.demo.common.domain.RespResult;
 
-import com.lh.demo.common.minio.config.MinIoConfig;
-import com.lh.demo.common.minio.util.MinioUtil;
+import com.lh.demo.common.utils.minio.config.MinIoConfig;
+import com.lh.demo.common.utils.minio.util.MinioUtil;
 import com.lh.demo.framework.annotation.Idempotent;
 
 import jakarta.annotation.Resource;

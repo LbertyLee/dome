@@ -1,4 +1,4 @@
-package com.lh.demo.common.minio.util;
+package com.lh.demo.common.utils.minio.util;
 import com.qcloud.cos.utils.IOUtils;
 import io.minio.*;
 import io.minio.http.Method;

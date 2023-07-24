@@ -1,4 +1,4 @@
-package com.lh.demo.common.redis.config;
+package com.lh.demo.common.utils.redis.config;
 
 import lombok.Data;
 import org.redisson.Redisson;

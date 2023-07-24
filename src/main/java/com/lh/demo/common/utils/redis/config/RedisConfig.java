@@ -1,4 +1,4 @@
-package com.lh.demo.common.redis.config;
+package com.lh.demo.common.utils.redis.config;
 
 import com.lh.demo.framework.config.FastJson2JsonRedisSerializer;
 import org.springframework.cache.annotation.EnableCaching;

@@ -1,7 +1,7 @@
 package com.lh.demo.test;
 
 
-import com.lh.demo.common.redis.util.BloomFilterUtil;
+import com.lh.demo.common.utils.redis.util.BloomFilterUtil;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
