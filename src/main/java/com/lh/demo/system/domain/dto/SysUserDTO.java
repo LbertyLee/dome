@@ -18,6 +18,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class SysUserDTO {
 
+    private Long id;
+
     /*** 用户名 */
     @NotBlank(message = "用户名不能为空")
     private String userName;
@@ -30,6 +32,9 @@ public class SysUserDTO {
 
     /*** 电话号码 */
     private  String phone;
+
+    /*** 角色id*/
+    private Long roleId;
 
     /*** 密码 */
     @NotBlank(message = "密码不能为空")

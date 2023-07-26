@@ -15,12 +15,9 @@
     </resultMap>
 
 
-    <select id="checkSystemUserExist" resultType="java.lang.Boolean" parameterType="com.lh.demo.system.domain.dto.SysUserDTO">
-        select count(id)>0 from  sys_user
-        <where >
-            <if test="userName != null  and userName != ''"> and user_name = #{userName}</if>
-            <if test="nickname != null  and nickname != ''"> and nickname = #{nickname}</if>
-            <if test="password != null  and password != ''"> and password = #{password}</if>
-        </where>
+    <select id="checkSystemUserNameExist" resultType="java.lang.Boolean" parameterType="string">
+        select count(id)>0 from  sys_user where user_name = #{userName}
     </select>
+
+
 </mapper>

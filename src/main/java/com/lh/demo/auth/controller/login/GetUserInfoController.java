@@ -34,7 +34,7 @@ public class GetUserInfoController {
     @GetMapping
     public RespResult GetUserInfo(){
         Long userId = SecurityUtils.getUserId();
-        SysUser sysUser =sysUserService.selectSysUserInfo(userId);
+        SysUser sysUser =sysUserService.selectSysUserInfoByUserId(userId);
         List<String> roles=sysRoleService.getRoleListByUserId();
         List<String> permissions=new ArrayList<>();
         HashMap<String, Object> UserInfo = new HashMap<>();

@@ -16,10 +16,10 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
     /**
      * 检查系统用户是否存在
      *
-     * @param sysUserDTO 查询包装
+     * @param userName 用户名
      * @return {@link Boolean}
      */
-    Boolean checkSystemUserExist(SysUserDTO sysUserDTO);
+    Boolean checkSystemUserNameExist(String userName);
 
 
 }
