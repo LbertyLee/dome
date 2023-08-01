@@ -14,11 +14,15 @@ import com.lh.demo.common.domain.RespResult;
 import com.lh.demo.common.exception.ServiceException;
 import com.lh.demo.common.utils.PaginateUtils;
 import com.lh.demo.common.utils.SecurityUtils;
+import com.lh.demo.common.utils.excel.ExcelFormat;
+import com.lh.demo.common.utils.excel.ExcelHeaderInfo;
+import com.lh.demo.common.utils.excel.ExcelUtils;
 import com.lh.demo.common.utils.uuid.IdUtils;
 import com.lh.demo.system.domain.SysRole;
 import com.lh.demo.system.domain.SysUserRole;
 import com.lh.demo.system.domain.vo.SysUserVO;
 import com.lh.demo.system.mapper.SysUserRoleMapper;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.BeanUtils;
 import com.lh.demo.system.domain.SysUser;
 import com.lh.demo.system.domain.dto.SysUserDTO;
@@ -28,8 +32,7 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * 系统用户服务实现类
@@ -161,6 +164,20 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     /**
+     * 导出系统用户
+     *
+     * @param response 响应
+     * @param fileName 文件名称
+     */
+    @Override
+    public void exportSysUser(HttpServletResponse response, String fileName) {
+        List<SysUser> sysUsers = sysUserMapper.selectList(null);
+        ExcelUtils excelUtils = new ExcelUtils(sysUsers, getHeaderInfo(), getFormatInfo());
+        excelUtils.sendHttpResponse(response, fileName, excelUtils.getWorkbook());
+
+    }
+
+    /**
      * 插入系统用户
      *
      * @param sysUser 系统用户
@@ -188,4 +205,27 @@ public class SysUserServiceImpl implements SysUserService {
         this.sysUserMapper.update(sysUser,sysUserLambdaUpdateChainWrapper);
     }
 
+    /**
+     * 得到格式信息
+     *
+     * @return {@link Map}<{@link String}, {@link ExcelFormat}>
+     */
+    private Map<String, ExcelFormat> getFormatInfo() {
+        Map<String, ExcelFormat> format = new HashMap<>();
+//        format.put("id", ExcelFormat.FORMAT_INTEGER);
+//        format.put("userId", ExcelFormat.FORMAT_INTEGER);
+//        format.put("status", ExcelFormat.FORMAT_INTEGER);
+//        format.put("createTime",ExcelFormat.FORMAT_DATE);
+        return format;
+    }
+
+    private List<ExcelHeaderInfo> getHeaderInfo() {
+        return Arrays.asList(
+                new ExcelHeaderInfo(1, 1, 0, 0, "id"),
+                new ExcelHeaderInfo(1, 1, 1, 1, "用户名"),
+                new ExcelHeaderInfo(1, 1, 2, 2, "用户昵称"),
+                new ExcelHeaderInfo(1, 1, 3, 3, "头像地址"),
+                new ExcelHeaderInfo(1, 1, 4, 4, "电话号码")
+        );
+    }
 }

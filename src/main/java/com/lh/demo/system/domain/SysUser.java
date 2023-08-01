@@ -20,7 +20,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@Document(collection = "SysUser")
 public class SysUser {
 
 

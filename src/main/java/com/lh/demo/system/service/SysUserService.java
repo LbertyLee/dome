@@ -7,6 +7,7 @@ import com.lh.demo.common.domain.RespResult;
 import com.lh.demo.system.domain.SysUser;
 import com.lh.demo.system.domain.dto.SysUserDTO;
 import com.lh.demo.system.domain.vo.SysUserVO;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.util.List;
 
@@ -77,6 +78,14 @@ public interface SysUserService   {
      * @param userIds 用户id
      */
     void deleteSystemUser(List<Long> userIds);
+
+    /**
+     * 导出系统用户
+     *
+     * @param response 响应
+     * @param fileName 文件名称
+     */
+    void exportSysUser(HttpServletResponse response, String fileName);
 
 
 }
